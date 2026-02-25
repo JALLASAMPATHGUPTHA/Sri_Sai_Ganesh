@@ -6,7 +6,7 @@ import { generateWhatsAppLink } from '../lib/whatsapp';
 export default function Footer() {
     const { t } = useTranslation();
     const shopName = import.meta.env.VITE_SHOP_NAME || 'Sri Jewellers';
-    const shopPhone = import.meta.env.VITE_SHOP_PHONE || '919876543210';
+    const shopPhone = import.meta.env.VITE_SHOP_PHONE || '9160733036';
     const shopEmail = import.meta.env.VITE_SHOP_EMAIL || 'shop@example.com';
     const shopAddress = import.meta.env.VITE_SHOP_ADDRESS || '123 Main Street, Hyderabad, India';
 

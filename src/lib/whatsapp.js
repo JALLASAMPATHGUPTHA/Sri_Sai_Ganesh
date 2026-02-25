@@ -1,5 +1,5 @@
 export const generateWhatsAppLink = (product = null) => {
-    const phone = import.meta.env.VITE_SHOP_PHONE || '919876543210';
+    const phone = import.meta.env.VITE_SHOP_PHONE || '9160733036';
     let message = '';
 
     if (product) {

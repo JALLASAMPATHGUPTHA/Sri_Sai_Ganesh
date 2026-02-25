@@ -10,7 +10,7 @@ export default function Contact() {
     const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
     const [sending, setSending] = useState(false);
 
-    const shopPhone = import.meta.env.VITE_SHOP_PHONE || '919876543210';
+    const shopPhone = import.meta.env.VITE_SHOP_PHONE || '9160733036';
     const shopEmail = import.meta.env.VITE_SHOP_EMAIL || 'shop@example.com';
     const shopAddress = t('shop.address');
     const mapEmbed = import.meta.env.VITE_SHOP_MAP_EMBED || '';
