@@ -67,12 +67,6 @@ export default function Navbar() {
                     {/* Right side */}
                     <div className="hidden lg:flex items-center gap-3">
                         <LanguageSwitcher />
-                        <Link
-                            to="/admin/login"
-                            className="text-sm text-gray-500 hover:text-gold-400 transition-colors px-3 py-2"
-                        >
-                            {t('nav.admin')}
-                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -105,12 +99,6 @@ export default function Navbar() {
                     ))}
                     <div className="flex items-center justify-between px-4 pt-3 border-t border-gray-800/50 mt-3">
                         <LanguageSwitcher />
-                        <Link
-                            to="/admin/login"
-                            className="text-sm text-gray-500 hover:text-gold-400 transition-colors"
-                        >
-                            {t('nav.admin')}
-                        </Link>
                     </div>
                 </div>
             </div>
