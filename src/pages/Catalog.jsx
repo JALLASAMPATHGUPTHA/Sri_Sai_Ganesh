@@ -62,6 +62,9 @@ export default function Catalog() {
                             type="text"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') e.target.blur();
+                            }}
                             placeholder={t('catalog.search')}
                             className="input-field pl-11"
                         />
