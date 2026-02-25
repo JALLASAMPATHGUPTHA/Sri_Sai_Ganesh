@@ -8,7 +8,7 @@ export default function Footer() {
     const shopName = import.meta.env.VITE_SHOP_NAME || 'Sri Jewellers';
     const shopPhone = import.meta.env.VITE_SHOP_PHONE || '9160733036';
     const shopEmail = import.meta.env.VITE_SHOP_EMAIL || 'shop@example.com';
-    const shopAddress = import.meta.env.VITE_SHOP_ADDRESS || '123 Main Street, Hyderabad, India';
+    const shopAddress = import.meta.env.VITE_SHOP_ADDRESS || '1-48 ,Vegetable Market, Ramalayam Road, Main Bazar Rd, Nandigama, Andhra Pradesh 521185';
 
     return (
         <footer className="bg-gray-950 border-t border-gray-800/50">
