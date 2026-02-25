@@ -1,13 +1,12 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
-import { mockProducts, mockCategories } from '../data/mockData';
 
 // ---- Products ----
 export const useProducts = (filters = {}) => {
     return useQuery({
         queryKey: ['products', filters],
         queryFn: async () => {
-            if (!isSupabaseConfigured()) return mockProducts;
+            if (!isSupabaseConfigured()) return [];
 
             let query = supabase
                 .from('products')
@@ -26,7 +25,7 @@ export const useProducts = (filters = {}) => {
             if (error) throw error;
             return data;
         },
-        placeholderData: mockProducts,
+        placeholderData: [],
     });
 };
 
@@ -34,7 +33,7 @@ export const useProduct = (id) => {
     return useQuery({
         queryKey: ['product', id],
         queryFn: async () => {
-            if (!isSupabaseConfigured()) return mockProducts.find(p => p.id === Number(id));
+            if (!isSupabaseConfigured()) return null;
 
             const { data, error } = await supabase
                 .from('products')
@@ -53,7 +52,7 @@ export const useCategories = () => {
     return useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            if (!isSupabaseConfigured()) return mockCategories;
+            if (!isSupabaseConfigured()) return [];
 
             const { data, error } = await supabase
                 .from('categories')
@@ -62,7 +61,7 @@ export const useCategories = () => {
             if (error) throw error;
             return data;
         },
-        placeholderData: mockCategories,
+        placeholderData: [],
     });
 };
 
@@ -71,7 +70,7 @@ export const useAdminProducts = () => {
     return useQuery({
         queryKey: ['adminProducts'],
         queryFn: async () => {
-            if (!isSupabaseConfigured()) return mockProducts;
+            if (!isSupabaseConfigured()) return [];
 
             const { data, error } = await supabase
                 .from('products')
@@ -167,7 +166,7 @@ export const useAnalytics = () => {
         queryKey: ['analytics'],
         queryFn: async () => {
             if (!isSupabaseConfigured()) {
-                return { totalViews: 1527, todayViews: 42, totalInquiries: 18 };
+                return { totalViews: 0, todayViews: 0, totalInquiries: 0 };
             }
             const { data: views } = await supabase.from('analytics').select('id', { count: 'exact' }).eq('event', 'view');
             const today = new Date().toISOString().split('T')[0];

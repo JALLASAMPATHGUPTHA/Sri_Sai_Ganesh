@@ -34,14 +34,14 @@ export default function LanguageSwitcher() {
             </button>
 
             {open && (
-                <div className="absolute right-0 mt-2 w-40 bg-gray-900 border border-gray-700 rounded-xl shadow-xl overflow-hidden animate-fade-in z-50">
+                <div className="absolute right-0 bottom-full mb-2 lg:bottom-auto lg:top-full lg:mt-2 w-40 bg-gray-900 border border-gray-700 rounded-xl shadow-xl overflow-hidden animate-fade-in z-50">
                     {languages.map((lang) => (
                         <button
                             key={lang.code}
                             onClick={() => { i18n.changeLanguage(lang.code); setOpen(false); }}
                             className={`w-full flex items-center gap-2 px-4 py-3 text-sm transition-colors ${i18n.language === lang.code
-                                    ? 'bg-gold-500/10 text-gold-400'
-                                    : 'text-gray-400 hover:bg-white/5 hover:text-white'
+                                ? 'bg-gold-500/10 text-gold-400'
+                                : 'text-gray-400 hover:bg-white/5 hover:text-white'
                                 }`}
                         >
                             <span>{lang.flag}</span>
