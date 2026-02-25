@@ -50,10 +50,12 @@ export default function ProductDetail() {
         .slice(0, 4);
 
     const whatsAppProduct = {
-        name: product.name_en,
+        id: product.id,
+        name: name,
         material: product.material,
         purity: product.purity,
         weight_grams: product.weight_grams,
+        image_urls: product.image_urls,
     };
 
     return (
@@ -81,8 +83,8 @@ export default function ProductDetail() {
                     <div className="space-y-6">
                         <div>
                             <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-3 ${product.material === 'gold'
-                                    ? 'bg-gold-500/10 text-gold-400 border border-gold-500/20'
-                                    : 'bg-gray-400/10 text-gray-300 border border-gray-400/20'
+                                ? 'bg-gold-500/10 text-gold-400 border border-gold-500/20'
+                                : 'bg-gray-400/10 text-gray-300 border border-gray-400/20'
                                 }`}>
                                 <Gem className="w-3 h-3" />
                                 {product.material === 'gold' ? t('common.gold') : t('common.silver')}

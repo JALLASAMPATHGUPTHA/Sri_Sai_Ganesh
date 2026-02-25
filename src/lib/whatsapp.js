@@ -3,16 +3,18 @@ export const generateWhatsAppLink = (product = null) => {
     let message = '';
 
     if (product) {
-        message = `Hi! I'm interested in: ${product.name_en}\n` +
+        const productUrl = `${window.location.origin}/product/${product.id}`;
+        message = `Hi! I'm interested in: ${product.name}\n` +
             `Material: ${product.material}\n` +
             `Purity: ${product.purity}\n` +
-            `Weight: ${product.weight_grams}g\n`;
+            `Weight: ${product.weight_grams}g\n` +
+            `Product Link: ${productUrl}\n`;
 
         if (product.image_urls && product.image_urls.length > 0) {
             message += `Image: ${product.image_urls[0]}\n`;
         }
 
-        message += `Please share more details and pricing.`;
+        message += `\nPlease share more details and pricing.`;
     } else {
         message = 'Hi! I would like to inquire about your ornament collection.';
     }
